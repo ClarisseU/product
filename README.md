@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` or preferably `python3.6 manage.py runserver` for a dev server. Navigate to `http://127.0.0.1:8000/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or preferably `python3.6 manage.py runserver` for running the server. Navigate to `http://127.0.0.1:8000/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
