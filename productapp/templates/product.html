@@ -2,23 +2,22 @@
 
 <div class="container">
 
-
-
     <div class="row">
-        <h1 class="text-center">{{products.name}}</h1>
+        <h1 class="text-center">{{product.name}}</h1>
     </div>
 
     <div class="row">
-        <p>{{products.detail}}</p>
+        <p>Details:{{product.detail}}</p>
     </div>
 
 
     <div class="row">
-        <p>{{products.price}}</p>
+        <p>Price:{{product.price}}</p>
     </div>
     <div class="row">
-        <p>{{products.manufactured}}</p>
+        <p>Manufacture on:{{product.manufactured}}</p>
     </div>
+    <a href="{% url 'welcome' %}">Go back</a>
 </div>
 
 {% endblock%}

@@ -13,16 +13,22 @@
 <body>
     {% block content %} {{block.super}}
     <div class="container">
+        <h3>Welcome to My products</h3>
+        <p>Click on a product to view it's details</p>
+        <hr>
         <div class="row">
-            <div class="col-md-6"> {% for p in products %}
-                <p>{{p.name}}</p>
+            <div class="col-md-6">
+                {% for p in product %}
+                <span class="border border-primary"> 
+                <p><a href="{% url 'product' p.id %}">{{p.name}}</a></p>
                 <p>{{p.detail}}</p>
-                <p>{{p.price}}</p>
-                <p>{{p.manufactured}}</p>
-                {%endfor%}
+                <!-- <p>{{p.price}}</p>
+                <p>{{p.manufactured}}</p> -->
+            
+            </span> {%endfor%}
             </div>
             <div class="col-md-6">
-                <a href="{% url 'new-product' %}" class="btn primary">Add a Product</a>
+                <a href="{% url 'new-product' %}" class="btn btn primary">Add a Product</a>
             </div>
         </div>
     </div>

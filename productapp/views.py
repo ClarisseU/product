@@ -2,18 +2,19 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import Product
 from .forms import productForm
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def welcome(request):
     products = Product.objects.all()
-    return render(request, 'index.html', {'products': products})
+    return render(request, 'index.html', {'product': products})
 
 def product(request, id):
     try:
         products = Product.objects.get(id=id)
-    except DoesNotExist:
+    except ObjectDoesNotExist:
         raise Http404()
-    return render (request, 'index.html', {'products': products})
+    return render (request, 'product.html', {'product': products})
 
 def new_product(request):
     if request.method == 'POST':
