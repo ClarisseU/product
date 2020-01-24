@@ -1,0 +1,25 @@
+<body>
+    <div class="container">
+        <h1>My Products</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let product of products; let i = index'>
+                    <ul>
+                        <li>{{product.name}}</li>
+                    </ul>
+
+                    <div>
+                        <app-product-detail [product]='product' (isComplete)='completeProduct($event, i)' *ngIf='product.showDetail'>
+                        </app-product-detail>
+                    </div>
+                    <button (click)='toggleDetails(i)'> Product Details</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <app-product-form (addProduct)="addNewProduct($event)"></app-product-form>
+            </div>
+        </div>
+        <p *ngIf='product.length > 10'>You have too many products</p>
+    </div>
+</body>

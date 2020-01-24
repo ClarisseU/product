@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <h2 class="text-center">Create a new Product</h2>
+    <hr>
+    <form (ngSubmit)='submitProduct()' #goalForm='ngForm'>
+        <div class="form-group">
+
+            <label for="name">Name</label>
+            <input type="text" required class="form-control" id="name" [(ngModel)]="newProduct.name" name="name" #name='ngModel' required>
+            <!-- Testing to see if I get any data -->
+            Display {{newProduct.name}}
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="detail">Detail</label>
+            <textarea class="form-control" id="detail" rows="4" [(ngModel)]="newProduct.detail" name="detail" #detail="ngModel" required></textarea>
+            <div [hidden]="detail.valid || detail.pristine" class="alert alert-danger">
+                <p>Detail is required</p>
+            </div>
+        </div>Detail
+        <div class="form-group">
+
+            <label for="price">Price</label>
+            <input type="text" id="price" [(ngModel)]="newProduct.price" name="price" #price="ngModel" required></textarea>
+            <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+                <p>price is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="manufactured">Manufactured on</label>
+            <input type="text" id="manufactured" rows="4" [(ngModel)]="newProduct.manufactured" name="manufactured" #manufactured="ngModel" required></textarea>
+            <div [hidden]="manufactured.valid || manufactured.pristine" class="alert alert-danger">
+                <p>manufacture date is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="complete">Completion</label>
+            <input type='date' id="complete" [(ngModel)]="newGoal.completeDate" name="completeDate" #completeDate="ngModel" required>
+            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                <p>Date is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+</div>
